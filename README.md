@@ -117,7 +117,8 @@ To evaluate the trained model, run:
 python engine.py --mode test
 ```
 
-The test results will be saved in the `samples/mat` directory.
+The test results will be saved in the `samples/mat/
+` directory.
 
 
 
