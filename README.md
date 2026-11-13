@@ -6,7 +6,7 @@
 
 **Hancong Jin, Zihan Cao, Liang-Jian Deng, Jingjing Li**
 
-**University of Electronic Science and Technology of China (UESTC)**
+University of Electronic Science and Technology of China (UESTC)
 
 
 [![Paper](https://img.shields.io/badge/Paper-CVPR%202026%20Findings-blue)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Jin_Fast_Kernel-Space_Diffusion_for_Remote_Sensing_Pansharpening_CVPRF_2026_paper.pdf)
