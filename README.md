@@ -10,6 +10,7 @@ University of Electronic Science and Technology of China (UESTC)
 
 
 [![Paper](https://img.shields.io/badge/Paper-CVPR%202026%20Findings-blue)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Jin_Fast_Kernel-Space_Diffusion_for_Remote_Sensing_Pansharpening_CVPRF_2026_paper.pdf)
+[![Dataset](https://img.shields.io/badge/🤗%20Dataset-Hugging%20Face-yellow)](https://huggingface.co/datasets/elsting/PanCollection)
 
 </div>
 
@@ -49,28 +50,62 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
+
 ### Dataset
 
-<!-- TODO: Describe the datasets used in the experiments. -->
-
-The datasets used in this work include:
+We conduct experiments on three widely used remote sensing pansharpening datasets:
 
 - **WorldView-3 (WV3)**
 - **QuickBird (QB)**
 - **GaoFen-2 (GF2)**
-- **TODO:** Other datasets, if applicable.
+
+
+All datasets are available through **[PanCollection (GitHub)](https://github.com/liangjiandeng/PanCollection)** and **[PanCollection (Hugging Face)](https://huggingface.co/datasets/elsting/PanCollection)**.
+
+
+
 
 
 
 ### Training
 
-<!-- TODO: Provide training instructions and configuration details. -->
+KSDiff adopts a two-stage training strategy. Before training, please configure the dataset paths and training parameters in `engine.py`.
 
-To train the proposed model, run:
+#### Stage 1: Pre-training
+
+In the first stage, set the following parameters in the `engine_google()` function call within `engine.py`:
+
+```python
+stage=1,
+pretrain_weight_s1=None,
+```
+
+Then, run:
 
 ```bash
-python train.py --config configs/XXX.yaml
+python engine.py --mode train
 ```
+
+The pretrained model weights will be saved in the `weights/` directory.
+
+#### Stage 2: Diffusion Model Training
+
+In the second stage, initialize the model using the pretrained weights obtained from Stage 1.
+
+Modify the corresponding parameters in `engine.py` as follows:
+
+```python
+stage=2,
+pretrain_weight_s1="./weights/your_stage1_checkpoint.pth",
+```
+
+Then, run:
+
+```bash
+python engine.py --mode train
+```
+
+The trained model weights will also be saved in the `weights/` directory.
 
 
 
@@ -79,8 +114,9 @@ python train.py --config configs/XXX.yaml
 To evaluate the trained model, run:
 
 ```bash
-python test.py --config configs/XXX.yaml --checkpoint checkpoints/XXX.pth
+python engine.py --mode test
 ```
+The test results will be saved in the `samples/mat` directory.
 
 
 
@@ -89,11 +125,12 @@ python test.py --config configs/XXX.yaml --checkpoint checkpoints/XXX.pth
 If you find our work useful in your research, please consider citing our paper:
 
 ```bibtex
-@article{jinTODO,
-  title   = {Fast Kernel-Space Diffusion for Remote Sensing Pansharpening},
-  author  = {Jin, Hancong and Cao, Zihan and Deng, Liang-Jian and Li, Jingjing},
-  journal = {TODO},
-  year    = {TODO}
+@inproceedings{jin2026fast,
+  title     = {Fast Kernel-Space Diffusion for Remote Sensing Pansharpening},
+  author    = {Jin, Hancong and Cao, Zihan and Deng, Liang-Jian and Li, Jingjing},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Findings},
+  pages     = {6291--6301},
+  year      = {2026}
 }
 ```
 
