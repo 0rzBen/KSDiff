@@ -711,7 +711,7 @@ def set_seed(SEED):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Dif-PAN Train or Test")
+    parser = argparse.ArgumentParser(description="KSDiff Train or Test")
 
     parser.add_argument(
         "--mode",
@@ -728,10 +728,10 @@ if __name__ == "__main__":
     if args.mode == "train":
 
         engine_google(
-            train_dataset_path="/workspace/data/valid_wv3.h5",
+            train_dataset_path="/workspace/data/train_wv3.h5",
             valid_dataset_path="/workspace/data/valid_wv3.h5",
             dataset_name="wv3",
-            pretrain_weight_s1="/workspace/KSDiff/weights/ema_wv3_iter_10_stage1.pth",
+            pretrain_weight_s1=None,
 
             max_iterations=300010,
             show_recon=False,
