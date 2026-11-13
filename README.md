@@ -1,10 +1,15 @@
 
 <h1 align="center">Fast Kernel-Space Diffusion for Remote Sensing Pansharpening</h1>
 
+
 <div align="center">
 
 **Hancong Jin, Zihan Cao, Liang-Jian Deng, Jingjing Li**
-**UESTC**
+
+**University of Electronic Science and Technology of China (UESTC)**
+
+</div>
+
 
 [![Paper](https://img.shields.io/badge/Paper-CVPR%202026%20Findings-blue)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Jin_Fast_Kernel-Space_Diffusion_for_Remote_Sensing_Pansharpening_CVPRF_2026_paper.pdf)
 
