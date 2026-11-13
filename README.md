@@ -4,6 +4,7 @@
 <div align="center">
 
 **Hancong Jin, Zihan Cao, Liang-Jian Deng, Jingjing Li**
+**UESTC**
 
 [![Paper](https://img.shields.io/badge/Paper-CVPR%202026%20Findings-blue)](https://openaccess.thecvf.com/content/CVPR2026F/papers/Jin_Fast_Kernel-Space_Diffusion_for_Remote_Sensing_Pansharpening_CVPRF_2026_paper.pdf)
 
@@ -28,15 +29,15 @@ KSDiff is a fast kernel-space diffusion framework for remote sensing pansharpeni
 Clone this repository:
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git
-cd REPOSITORY
+git clone https://github.com/0rzBen/KSDiff.git
+cd KSDiff
 ```
 
 Create a virtual environment:
 
 ```bash
-conda create -n FKSD python=TODO
-conda activate FKSD
+conda create -n ksdiff python=3.10
+conda activate ksdiff
 ```
 
 Install the dependencies:
