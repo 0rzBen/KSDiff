@@ -763,7 +763,7 @@ if __name__ == "__main__":
 
         test_fn(
             test_data_path="/workspace/data/test_wv3_multiExm1.h5",
-            weight_path="/workspace/KSDiff/weights/ema_wv3_iter_10_stage2.pth",
+            weight_path="",
             dataset_name="wv3",
 
             batch_size=1,
