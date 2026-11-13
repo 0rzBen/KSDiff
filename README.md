@@ -1,5 +1,5 @@
 
-# Fast Kernel-Space Diffusion for Remote Sensing Pansharpening
+<h1 align="center">Fast Kernel-Space Diffusion for Remote Sensing Pansharpening</h1>
 
 <div align="center">
 
